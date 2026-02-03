@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+  background:url("bg3.jpg") center/cover;
+  color:white;
+  font-family:Arial;
+}
+audio{ display:none; }
+.container{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  padding:40px;
+}
+.card{
+  background:rgba(0,0,0,0.6);
+  padding:20px;
+  border-radius:20px;
+  text-align:center;
+}
+img{
+  width:100%;
+  border-radius:15px;
+}
+</style>
+</head>
+
+<body>
+<audio autoplay loop>
+  <source src="song.mp3">
+</audio>
+
+<div class="container">
+  <div class="card">
+    <img src="1.jpg">
+    <p>أجمل صدفة في حياتي ❤️</p>
+  </div>
+  <div class="card">
+    <img src="2.jpg">
+    <p>ضحكتك أماني</p>
+  </div>
+  <div class="card">
+    <img src="3.jpg">
+    <p>معاكي أنا بخير</p>
+  </div>
+  <div class="card">
+    <img src="4.jpg">
+    <p><a href="https://youtube.com" style="color:pink;">أغنيتنا 🎶</a></p>
+  </div>
+</div>
+
+</body>
+</html>

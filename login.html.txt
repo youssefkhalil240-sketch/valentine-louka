@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+  height:100vh;
+  background:url("bg2.jpg") center/cover;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:Arial;
+}
+.box{
+  background:rgba(0,0,0,0.6);
+  padding:40px;
+  border-radius:20px;
+  color:white;
+  text-align:center;
+}
+input{
+  padding:10px;
+  margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+<div class="box">
+  <h2>Enter your birthday 🎂</h2>
+  <input type="date" id="date">
+  <br><br>
+  <button onclick="check()">Login</button>
+</div>
+
+<script>
+function check(){
+  if(document.getElementById("date").value === "2000-05-15"){
+    window.location.href="love.html";
+  } else {
+    alert("Wrong date 💔");
+  }
+}
+</script>
+</body>
+</html>
