@@ -2,102 +2,51 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For My Valentine ❤️</title>
+<title>Login ❤️</title>
 
 <style>
 body {
-  margin: 0;
-  height: 100vh;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  color: white;
+  background-color: #ffe6eb;
+  background-image: url("bg1.jpg");
   background-size: cover;
   background-position: center;
-  animation: bgChange 12s infinite;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding-top: 120px;
 }
 
-@keyframes bgChange {
-  0%   { background-image: url("bg1.jpg"); }
-  33%  { background-image: url("bg2.jpg"); }
-  66%  { background-image: url("bg3.jpg"); }
-  100% { background-image: url("bg1.jpg"); }
-}
-
-#question, #result {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-button {
-  padding: 15px 30px;
-  font-size: 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  margin: 10px;
-}
-
-#yes {
-  background: #4CAF50;
-  color: black;
-}
-
-#no {
-  background: #ff4d6d;
-  color: white;
-  position: absolute;
-}
-
-#result {
-  display: none;
-}
-
-img {
-  width: 200px;
+.box {
+  background: rgba(255,255,255,0.85);
+  display: inline-block;
+  padding: 30px;
   border-radius: 15px;
-  margin: 10px;
+}
+
+input, button {
+  padding: 12px;
+  font-size: 18px;
+  margin-top: 15px;
 }
 </style>
 </head>
 
 <body>
 
-<div id="question">
-  <h1>Will you be my Valentine? 💘</h1>
-  <button id="yes" onclick="showLove()">Yes ❤️</button>
-  <button id="no" onmouseover="moveNo()">No 😅</button>
-</div>
-
-<div id="result">
-  <h1>I love you ❤️</h1>
-  <p>
-    You are my favorite person in this world 💕<br><br>
-    Rbna ya5liki lia ya agml w a7nn w agml bosa w alb ❤️  
-    bahbk gden gden gden w ba3sh2k ya ro7 alby  
-  </p>
-
-  <img src="photo1.jpg">
-  <img src="photo2.jpg">
-
-  <audio controls autoplay loop>
-    <source src="song.mp3" type="audio/mpeg">
-  </audio>
+<div class="box">
+  <h1>🎂 Enter Your Birthday 🎂</h1>
+  <input type="date" id="bday">
+  <br>
+  <button onclick="check()">Enter ❤️</button>
 </div>
 
 <script>
-function moveNo() {
-  let x = Math.random() * (window.innerWidth - 100);
-  let y = Math.random() * (window.innerHeight - 100);
-  let noBtn = document.getElementById("no");
-  noBtn.style.left = x + "px";
-  noBtn.style.top = y + "px";
-}
-
-function showLove() {
-  document.getElementById("question").style.display = "none";
-  document.getElementById("result").style.display = "block";
+function check() {
+  let d = document.getElementById("bday").value;
+  if (d === "2005-05-19") {
+    window.location.href = "love.html";
+  } else {
+    alert("Wrong date 😅");
+  }
 }
 </script>
 
