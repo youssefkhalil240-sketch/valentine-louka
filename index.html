@@ -5,42 +5,60 @@
 <title>For My Valentine ❤️</title>
 
 <style>
-  body {
-    background: #ffe6eb;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding-top: 80px;
-  }
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  animation: bgChange 12s infinite;
+}
 
-  button {
-    padding: 15px 30px;
-    font-size: 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    position: relative;
-  }
+@keyframes bgChange {
+  0%   { background-image: url("bg1.jpg"); }
+  33%  { background-image: url("bg2.jpg"); }
+  66%  { background-image: url("bg3.jpg"); }
+  100% { background-image: url("bg1.jpg"); }
+}
 
-  #no {
-    position: absolute;
-    background: #ff4d6d;
-    color:red;
-  }
+#question, #result {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-  #yes {
-    background: #4CAF50;
-    color:black;
-  }
+button {
+  padding: 15px 30px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px;
+}
 
-  #result {
-    display: none;
-  }
+#yes {
+  background: #4CAF50;
+  color: black;
+}
 
-  img {
-    width: 200px;
-    border-radius: 15px;
-    margin: 10px;
-  }
+#no {
+  background: #ff4d6d;
+  color: white;
+  position: absolute;
+}
+
+#result {
+  display: none;
+}
+
+img {
+  width: 200px;
+  border-radius: 15px;
+  margin: 10px;
+}
 </style>
 </head>
 
@@ -54,20 +72,27 @@
 
 <div id="result">
   <h1>I love you ❤️</h1>
-  <p>You are my favorite person in this world 💕<br>
-  Rbna ya5liki lia ya agml w a7nn w agml bosa w alb w wahda fe donia deh ya ro7 alby nty bahbk gden gden gden w ba3sh2k yarb tafdli daymn 3ala tool gamby w laz2a fia kda w rbna mayhrmnesh mnk abdnnn bgd shokran ank gamby w bathbini bas na bahbk akter mnk million mara bgd♥️</p>
+  <p>
+    You are my favorite person in this world 💕<br><br>
+    Rbna ya5liki lia ya agml w a7nn w agml bosa w alb ❤️  
+    bahbk gden gden gden w ba3sh2k ya ro7 alby  
+  </p>
 
-  <!-- صور افتراضية، غيرها بصورك -->
-  <img src="https://via.placeholder.com/200x200.png?text=Photo1">
-  <img src="https://via.placeholder.com/200x200.png?text=Photo2">
+  <img src="photo1.jpg">
+  <img src="photo2.jpg">
+
+  <audio controls autoplay loop>
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
 </div>
 
 <script>
 function moveNo() {
   let x = Math.random() * (window.innerWidth - 100);
   let y = Math.random() * (window.innerHeight - 100);
-  document.getElementById("no").style.left = x + "px";
-  document.getElementById("no").style.top = y + "px";
+  let noBtn = document.getElementById("no");
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
 }
 
 function showLove() {
