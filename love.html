@@ -61,7 +61,8 @@ img {
 </head>
 
 <body>
-
+  
+<audio id="music" src="song.mp3"></audio>
 <div id="question" class="box">
   <h1>Will you be my Valentine? 💘</h1>
   <button id="yes" onclick="showLove()">Yes ❤️</button>
@@ -93,12 +94,15 @@ img {
 </div>
 
 <script>
-function moveNo() {
-  let x = Math.random() * (window.innerWidth - 120);
-  let y = Math.random() * (window.innerHeight - 120);
-  document.getElementById("no").style.left = x + "px";
-  document.getElementById("no").style.top = y + "px";
+function showLove() {
+  document.getElementById("question").style.display = "none";
+  document.getElementById("result").style.display = "block";
+
+  let music = document.getElementById("music");
+  music.play();
 }
+</script>
+
 
 function showLove() {
   document.getElementById("question").style.display = "none";
@@ -108,6 +112,7 @@ function showLove() {
 
 </body>
 </html>
+
 
 
 
